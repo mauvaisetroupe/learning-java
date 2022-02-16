@@ -17,7 +17,6 @@ class BubbleSortEngineTest {
 		testArray(0,10,10);
 	}
 
-
 	@Test
 	void testSort2() {
 		testArray(-10,10,20);
@@ -32,12 +31,13 @@ class BubbleSortEngineTest {
 	private void testArray(int min, int max, int nbItem) {
 		SortUtils sortUtils = new SortUtils();		
 		int[] values = sortUtils.generateArray(min, max, nbItem);
+		int[] originValues = Arrays.copyOf(values,values.length);		
 		BubbleSortEngine engine = new BubbleSortEngine();
 		System.out.println(Arrays.toString(values));
-		assertFalse(sortUtils.isSorted(values));
+		assertFalse(sortUtils.isSorted(originValues, values));
 		engine.sort(values);
 		System.out.println(Arrays.toString(values));
-		assertTrue(sortUtils.isSorted(values));				
+		assertTrue(sortUtils.isSorted(originValues, values));				
 	}
 
 

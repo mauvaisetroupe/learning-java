@@ -27,12 +27,13 @@ class SelectionSortEngineTest {
 	private void testArray(int min, int max, int nbItem) {
 		SortUtils sortUtils = new SortUtils();
 		int[] values = sortUtils.generateArray(min, max, nbItem);
+		int[] originValues = Arrays.copyOf(values,values.length);
 		SelectionSortEngine engine = new SelectionSortEngine();
 		System.out.println(Arrays.toString(values));
-		assertFalse(sortUtils.isSorted(values));
+		assertFalse(sortUtils.isSorted(originValues, values));
 		engine.sort(values);
 		System.out.println(Arrays.toString(values));
-		assertTrue(sortUtils.isSorted(values));
+		assertTrue(sortUtils.isSorted(originValues, values));
 	}
 
 }
