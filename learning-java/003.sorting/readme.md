@@ -1,4 +1,4 @@
-# Exercise 002.sorting
+# Exercise 003.sorting
 
 Sorting algorithms should now return a new int[] and not modify the int[] given in argument 
 - add implementation for com.mauvaisetroupe.learning.sorting.bubble.Engine (from 002.sorting)

@@ -10,19 +10,19 @@ class SelectionSortEngineTest {
 
 	@Test
 	void testSort1() {
-		SortEngine engine = new SelectionSortEngine();
+		SortEngine<Integer> engine = new SelectionSortEngine<Integer>();
 		sortUtils.testArray(0,10,10,engine);
 	}
 
 	@Test
 	void testSort2() {
-		SortEngine engine = new SelectionSortEngine();
+		SortEngine<Integer> engine = new SelectionSortEngine<Integer>();
 		sortUtils.testArray(-10,10,20,engine);
 	}
 
 	@Test
 	void testSort3() {
-		SortEngine engine = new SelectionSortEngine();
+		SortEngine<Integer> engine = new SelectionSortEngine<Integer>();
 		sortUtils.testArray(-100,100,2000,engine);
 	}
 

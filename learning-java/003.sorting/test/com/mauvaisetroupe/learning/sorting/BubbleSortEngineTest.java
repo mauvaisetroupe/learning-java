@@ -3,7 +3,6 @@ package com.mauvaisetroupe.learning.sorting;
 import org.junit.jupiter.api.Test;
 
 import com.mauvaisetroupe.learning.sorting.bubble.BubbleSortEngine;
-import com.mauvaisetroupe.learning.sorting.selection.SelectionSortEngine;
 
 
 class BubbleSortEngineTest {
