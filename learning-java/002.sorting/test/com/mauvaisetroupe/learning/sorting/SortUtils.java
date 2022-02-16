@@ -9,9 +9,13 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SortUtils {
 	
-	public boolean isSorted(int[] values) {
-		for (int i = 0; i < values.length-1; i++) {
-			if (values[i]>values[i+1]) {
+	public boolean isSorted(int[] values, int[] sortedValues) {
+		if (values.length!=sortedValues.length) {
+			return false;
+		}
+		Arrays.sort(values);		
+		for (int i = 0; i < sortedValues.length-1; i++) {
+			if (values[i]!=sortedValues[i]) {
 				return false;
 			}
 		}
@@ -31,11 +35,12 @@ public class SortUtils {
 	public void testArray(int min, int max, int nbItem, SortEngine engine) {
 		SortUtils sortUtils = new SortUtils();
 		int[] values = sortUtils.generateArray(min, max, nbItem);
+		int[] originalValues = Arrays.copyOf(values, values.length);
 		System.out.println(Arrays.toString(values));
-		assertFalse(sortUtils.isSorted(values));
+		assertFalse(sortUtils.isSorted(originalValues, values));
 		engine.sort(values);
 		System.out.println(Arrays.toString(values));
-		assertTrue(sortUtils.isSorted(values));
+		assertTrue(sortUtils.isSorted(originalValues, values));
 	}	
 
 
